@@ -21,6 +21,8 @@ json_data = json.loads(r.text)
 parsed_text = json_data['ParsedResults'][0]['ParsedText']
 parsed_tables = json_data['ParsedResults'][0]['TextOverlay']['Lines']
 
+print(parsed_tables)
+
 # Step 3: Use the Pandas library to read the structured data into a DataFrame
 df = pd.read_csv(parsed_text, sep='\n', header=None)
 
